@@ -20,7 +20,7 @@ request:
 	]
 }
 
-response::
+response:
 {
     "data": null,
     "message": "Category saved successfully",
