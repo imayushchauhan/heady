@@ -1,7 +1,7 @@
 # heady
 
-# run application
-1. Go to the root directory
+# run app
+1. go to the root directory
 2. run command "npm install"
 3. run command "npm start"
 
@@ -14,16 +14,36 @@ post
 
 request: 
 {
-	"name": "parent category",
-	"categoryList": [
-		"5bcb8cdbae458214bc8eac40"
-	]
+	{
+    	"name": "category_one"
+    }
 }
 
 response:
 {
     "data": null,
     "message": "Category saved successfully",
+    "code": 200
+}
+
+# update category api
+url:
+localhost:3000/category/5bcc3faebfa3b81bb4abf0e0
+
+method:
+put
+
+request:
+{
+	"categoryList": [
+		"5bcc3fb7bfa3b81bb4abf0e1"
+	]
+}
+
+response:
+{
+    "data": null,
+    "message": "Category updated successfully",
     "code": 200
 }
 
@@ -38,34 +58,34 @@ response:
 {
     "data": [
         {
-            "name": "child category",
-            "categoryList": [],
-            "addedOn": 1540066523572,
-            "modifiedOn": 1540066523573,
-            "isActive": 1,
-            "isDeleted": 0,
-            "_id": "5bcb8cdbae458214bc8eac40",
-            "__v": 0
-        },
-        {
-            "name": "parent category",
+            "name": "category_one",
             "categoryList": [
                 {
-                    "name": "child category",
+                    "name": "category_two",
                     "categoryList": [],
-                    "addedOn": 1540066523572,
-                    "modifiedOn": 1540066523573,
+                    "addedOn": 1540112311140,
+                    "modifiedOn": 1540112311140,
                     "isActive": 1,
                     "isDeleted": 0,
-                    "_id": "5bcb8cdbae458214bc8eac40",
+                    "_id": "5bcc3fb7bfa3b81bb4abf0e1",
                     "__v": 0
                 }
             ],
-            "addedOn": 1540066562457,
-            "modifiedOn": 1540066562457,
+            "addedOn": 1540112302491,
+            "modifiedOn": 1540112350359,
             "isActive": 1,
             "isDeleted": 0,
-            "_id": "5bcb8d02ae458214bc8eac41",
+            "_id": "5bcc3faebfa3b81bb4abf0e0",
+            "__v": 0
+        },
+        {
+            "name": "category_two",
+            "categoryList": [],
+            "addedOn": 1540112311140,
+            "modifiedOn": 1540112311140,
+            "isActive": 1,
+            "isDeleted": 0,
+            "_id": "5bcc3fb7bfa3b81bb4abf0e1",
             "__v": 0
         }
     ],
@@ -82,10 +102,10 @@ post
 
 request:
 {
-	"name": "product",
-	"price": 20,
+	"name": "product_one",
+	"price": 10,
 	"categoryList": [
-		"5bcb8d02ae458214bc8eac41"
+		"5bcc3faebfa3b81bb4abf0e0"
 	]
 }
 
@@ -98,7 +118,7 @@ response:
 
 # get product list api
 url:
-localhost:3000/category/5bcb8d02ae458214bc8eac41/product/list
+localhost:3000/category/5bcc3faebfa3b81bb4abf0e0/product/list
 
 method:
 get
@@ -107,27 +127,27 @@ response:
 {
     "data": [
         {
-            "name": "product",
+            "name": "product_one",
             "price": "10",
             "categoryList": [
                 {
-                    "name": "parent category",
+                    "name": "category_one",
                     "categoryList": [
-                        "5bcb8cdbae458214bc8eac40"
+                        "5bcc3fb7bfa3b81bb4abf0e1"
                     ],
-                    "addedOn": 1540066562457,
-                    "modifiedOn": 1540066562457,
+                    "addedOn": 1540112302491,
+                    "modifiedOn": 1540112350359,
                     "isActive": 1,
                     "isDeleted": 0,
-                    "_id": "5bcb8d02ae458214bc8eac41",
+                    "_id": "5bcc3faebfa3b81bb4abf0e0",
                     "__v": 0
                 }
             ],
-            "addedOn": 1540066611204,
-            "modifiedOn": 1540066670551,
+            "addedOn": 1540112414116,
+            "modifiedOn": 1540112483264,
             "isActive": 1,
             "isDeleted": 0,
-            "_id": "5bcb8d33ae458214bc8eac42",
+            "_id": "5bcc401ebfa3b81bb4abf0e2",
             "__v": 0
         }
     ],
@@ -137,15 +157,14 @@ response:
 
 # update product
 url:
-localhost:3000/product/5bcb8d33ae458214bc8eac42
+localhost:3000/product/5bcc401ebfa3b81bb4abf0e2
 
 method:
 put
 
 request:
 {
-	"name": "product",
-	"price": 10
+	"price": 20
 }
 
 response:

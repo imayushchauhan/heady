@@ -9,7 +9,9 @@ module.exports = {
         UNABLE_TO_GET_PRODUCT_LIST: "Unable to get product list",
         PRODUCT_LIST_FETCHED_SUCCESSFULLY: "Product list fetched successfully",
         UNABLE_TO_UPDATE_PRODUCT: "Unable to update product",
-        PRODUCT_UPDATED_SUCCESSFULLY: "Product updated successfully"
+        PRODUCT_UPDATED_SUCCESSFULLY: "Product updated successfully",
+        UNABLE_TO_UPDATE_CATEGORY: "Unable to update category",
+        CATEGORY_UPDATED_SUCCESSFULLY: "Category updated successfully"
     },
 
     CODE: {

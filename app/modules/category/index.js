@@ -10,6 +10,11 @@ class CategoryController {
         const categoryBLManager = new CategoryBLManager();
         return await categoryBLManager.getCategoryList();
     }
+
+    async updateCategory(req) {
+        const categoryBLManager = new CategoryBLManager();
+        return await categoryBLManager.updateCategory(req.params.id, req.body);
+    }
 }
 
 module.exports = CategoryController;

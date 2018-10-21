@@ -34,6 +34,23 @@ class CategoryBLManager {
 
         return Utility.getResponseObject(getCategoryListResponse, Constants.MSG.CATEGORY_LIST_FETCHED_SUCCESSFULLY, Constants.CODE.SUCCESS_RESPONSE_CODE);
     }
+
+    async updateCategory(categoryId, requestData) {
+        console.log(categoryId);
+        requestData['modifiedOn'] = new Date();
+
+        const queryObj = {
+            _id: categoryId
+        };
+
+        try {
+            await Category.updateCategory(queryObj, requestData);
+        } catch (err) {
+            return Utility.getResponseObject(null, Constants.MSG.UNABLE_TO_UPDATE_CATEGORY, Constants.CODE.ERROR_RESPONSE_CODE);
+        }
+
+        return Utility.getResponseObject(null, Constants.MSG.CATEGORY_UPDATED_SUCCESSFULLY, Constants.CODE.SUCCESS_RESPONSE_CODE);
+    }
 }
 
 module.exports = CategoryBLManager;

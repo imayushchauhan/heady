@@ -18,6 +18,9 @@ CategorySchema.method({
 CategorySchema.static({
     getCategory: function (queryObj, selectionKey, offset, limit) {
         return this.find(queryObj, selectionKey).populate('categoryList').skip(parseInt(offset)).limit(parseInt(limit)).exec();
+    },
+    updateCategory: function (queryObj, updateObj) {
+        return this.update(queryObj, {$set: updateObj}, {multi: true}).exec();
     }
 });
 
